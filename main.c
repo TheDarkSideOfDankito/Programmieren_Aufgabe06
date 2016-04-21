@@ -1,15 +1,11 @@
 #include "TextFileReader.h"
+//#include "Task02.h"
 
 
-void task01();
 
 int main() {
     task01();
+//    task02();
 
     return 0;
-}
-
-void task01() {
-    float sumOfSecondColumn = calculateSumOfSecondColumn();
-    printf("%.1f", sumOfSecondColumn);
 }

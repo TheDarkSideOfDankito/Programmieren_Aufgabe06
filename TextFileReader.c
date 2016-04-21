@@ -16,12 +16,18 @@ float calculateSumOfSecondColumn() {
 
     int firstColumn = 0, thirdColumn = 0;
     float secondColumn = 0.0;
-    char forthColumn[81];
+    char forthColumn[7];
+    int readResult = -1;
 
-    while(!feof(textFile)) {
-        fscanf(textFile, "%d,%f,%d,%s", &firstColumn, &secondColumn, &thirdColumn, forthColumn);
+    while(1) {
+        readResult = fscanf(textFile, "%d,%f,%d,%s", &firstColumn, &secondColumn, &thirdColumn, forthColumn);
 
-        sum += secondColumn;
+        if(readResult != EOF) {
+            sum += secondColumn;
+        }
+        else {
+            break;
+        }
     }
 
     closeTextFile();
@@ -45,4 +51,10 @@ bool closeTextFile() {
     }
 
     return false;
+}
+
+
+void task01() {
+    float sumOfSecondColumn = calculateSumOfSecondColumn();
+    printf("%.1f", sumOfSecondColumn);
 }

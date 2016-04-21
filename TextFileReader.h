@@ -16,4 +16,7 @@ bool openTextFile();
 bool closeTextFile();
 
 
+void task01();
+
+
 #endif //INC_06_TEXTFILEREADER_H
